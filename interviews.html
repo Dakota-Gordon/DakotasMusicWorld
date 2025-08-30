@@ -1,3 +1,12 @@
+  <!-- CSS moved to <head> -->
+<body>
+  <nav class="bottom-bar">
+  <a href="/index.html">Home</a>
+  <a href="/photos.html">Photography</a>
+  <a href="/videos.html">Live Recordings</a>
+  <a href="/interviews.html">Interviews</a>
+  <a href="/contact.html">Contact</a>
+  </nav>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,26 +64,26 @@
       color: #f47a2c;
     }
     .bg-img-container {
-      position: fixed;
-      left: 0; top: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: 0;
-      overflow: hidden;
-      background: #ffe44c;
+  position: fixed;
+  left: 0; top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  overflow: hidden;
+  /* background removed to prevent yellow flash */
     }
     .bg-img {
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
-      object-position: center center;
-      position: absolute;
-      left: 0; top: 0;
-      z-index: 0;
-      user-select: none;
-      pointer-events: none;
-      /* No background CSS here, image is set via <img> src */
-      transition: none;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center center;
+  position: absolute;
+  left: 0; top: 0;
+  z-index: 0;
+  user-select: none;
+  pointer-events: none;
+  /* No background CSS here, image is set via <img> src */
+  transition: none;
     }
     .logo-link {
       position: fixed;
@@ -151,19 +160,12 @@
   </style>
 </head>
 <body>
-  <nav class="bottom-bar">
-    <a href="/index.html">Home</a>
-    <a href="/photos.html">Photography</a>
-    <a href="/videos.html">Live Recordings</a>
-    <a href="/interviews.html">Interviews</a>
-    <a href="/contact.html">Contact</a>
-  </nav>
   <div class="bg-img-container">
-    <img src="iv.png" class="bg-img" alt="Interview Collection Background" />
+  <img src="iv.png" class="bg-img" alt="Interview Collection Background" />
   </div>
   <a href="/index.html" class="logo-link"><img src="https://i.ibb.co/m5bVFqcV/Chat-GPT-Image-Aug-28-2025-at-02-46-48-PM-removebg-preview.png" alt="Logo" class="logo-img" border="0"></a>
   <div class="photos-hero">
-    <!-- Add your interviews content here -->
+  <!-- Add your interviews content here -->
   </div>
 </body>
 </html>
