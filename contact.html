@@ -183,7 +183,8 @@
   <a href="/index.html" class="logo-link"><img src="https://i.ibb.co/m5bVFqcV/Chat-GPT-Image-Aug-28-2025-at-02-46-48-PM-removebg-preview.png" alt="Logo" class="logo-img" border="0"></a>
   <div class="contact-hero">
     <div class="contact-title">CONTACT ME</div>
-    <form class="contact-form" autocomplete="off">
+  <!-- Form will send to dakotabgordon05@gmail.com via Formspree -->
+  <form class="contact-form" autocomplete="off" action="https://formspree.io/f/xoqgqzqg" method="POST" target="_blank">
       <label for="name">Name</label>
       <input type="text" id="name" name="name" required>
       <label for="email">Email</label>
@@ -193,12 +194,6 @@
       <button type="submit">SUBMIT</button>
     </form>
   </div>
-  <script>
-    document.querySelector('.contact-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      alert('Thank you for reaching out! This demo does not send real messages.');
-      this.reset();
-    });
-  </script>
+  <!-- No JS needed, handled by Formspree -->
 </body>
 </html>
