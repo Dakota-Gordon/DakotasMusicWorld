@@ -5,9 +5,165 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Interviews | Dakota's Music World</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Permanent+Marker&display=swap" rel="stylesheet">
-  <!-- ...existing styles... -->
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      background: #000;
+      display: block;
+      font-family: 'Montserrat', Arial, sans-serif;
+      color: #fff;
+      min-width: 100vw;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
+    .bottom-bar {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100vw;
+      background: rgba(56,69,31,0.82);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 36px;
+      padding: 18px 0 14px 0;
+      z-index: 100;
+      font-family: 'Permanent Marker', 'Montserrat', Arial, sans-serif;
+      font-size: 1.35em;
+      box-shadow: 0 -2px 12px #0005;
+      letter-spacing: 0.5px;
+    }
+    .bottom-bar a {
+      color: #f47a2c;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 6px 18px;
+      border-radius: 8px;
+      transition: background 0.18s, color 0.18s;
+      background: transparent;
+    }
+    .bottom-bar a:hover {
+      background: #38451f;
+      color: #f47a2c;
+    }
+    .bg-img-container {
+      position: fixed;
+      left: 0; top: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      overflow: hidden;
+      background: #ffe44c;
+    }
+    .bg-img {
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      object-position: center center;
+      position: absolute;
+      left: 0; top: 0;
+      z-index: 0;
+      user-select: none;
+      pointer-events: none;
+      /* No background CSS here, image is set via <img> src */
+      transition: none;
+    }
+    .logo-link {
+      position: fixed;
+      top: 2vw;
+      left: 6vw;
+      z-index: 10;
+      background: transparent;
+      padding: 0;
+    }
+    .logo-img {
+      width: 20vw;
+      min-width: 100px;
+      max-width: 320px;
+      height: auto;
+      filter: brightness(1.35) drop-shadow(0 0 16px #fff8);
+      transition: width 0.2s, top 0.2s, left 0.2s;
+    }
+    .photos-hero {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+    }
+    .hotspot {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      border: 3px solid #FFD600;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.15);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: box-shadow 0.2s;
+      z-index: 10;
+    }
+    .hotspot:hover {
+      box-shadow: 0 0 0 8px rgba(255,214,0,0.25);
+    }
+    .hotspot-label {
+      position: absolute;
+      top: 110%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #FFD600;
+      color: #222;
+      font-family: 'Futura', 'Arial Black', Arial, sans-serif;
+      font-weight: bold;
+      padding: 6px 18px;
+      border-radius: 20px;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+      white-space: nowrap;
+      pointer-events: none;
+      opacity: 0.95;
+    }
+    @media (max-width: 600px) {
+      .logo-link {
+        top: 12vw;
+        left: 2vw;
+      }
+      .logo-img {
+        width: 38vw;
+        min-width: 80px;
+        max-width: 180px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <!-- ...existing content from /live/interviews.html... -->
+  <nav class="bottom-bar">
+    <a href="/index.html">Home</a>
+    <a href="/photos.html">Photography</a>
+    <a href="/videos.html">Live Recordings</a>
+    <a href="/interviews.html">Interviews</a>
+    <a href="/contact.html">Contact</a>
+  </nav>
+  <div class="bg-img-container">
+    <img src="iv.png" class="bg-img" alt="Interview Collection Background" />
+  </div>
+  <a href="/index.html" class="logo-link"><img src="https://i.ibb.co/m5bVFqcV/Chat-GPT-Image-Aug-28-2025-at-02-46-48-PM-removebg-preview.png" alt="Logo" class="logo-img" border="0"></a>
+  <div class="photos-hero">
+    <!-- Add your interviews content here -->
+  </div>
 </body>
 </html>
