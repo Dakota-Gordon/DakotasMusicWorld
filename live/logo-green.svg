@@ -1,0 +1,9 @@
+/* Dakota's Music World Logo - Green Recolor
+   This SVG recolors the logo to match #38451f (couch/bottom bar green) */
+<svg xmlns="http://www.w3.org/2000/svg" width="350" height="auto" viewBox="0 0 700 200">
+  <g>
+    <!-- Replace this with your actual logo SVG paths, recolored -->
+    <rect width="700" height="200" fill="none"/>
+    <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-size="80" font-weight="bold" fill="#38451f">Dakota's Music World</text>
+  </g>
+</svg>

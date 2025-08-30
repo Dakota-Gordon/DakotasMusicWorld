@@ -1,0 +1,225 @@
+<body>
+  <nav class="bottom-bar">
+    <a href="index.html">Home</a>
+    <a href="photos.html">Photography</a>
+    <a href="videos.html">Live Recordings</a>
+    <a href="interviews.html">Interviews</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Dakota's Music World</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Permanent+Marker&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      background: #000 url('https://videos.openai.com/vg-assets/assets%2Ftask_01k3rt7bzzespt7mep56qyhs6s%2F1756400852_img_0.webp?st=2025-08-28T15%3A52%3A53Z&se=2025-09-03T16%3A52%3A53Z&sks=b&skt=2025-08-28T15%3A52%3A53Z&ske=2025-09-03T16%3A52%3A53Z&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skoid=aa5ddad1-c91a-4f0a-9aca-e20682cc8969&skv=2019-02-02&sv=2018-11-09&sr=b&sp=r&spr=https%2Chttp&sig=8X%2B%2Bf5os0GjZlKZUQ3rkgqCUku3L%2FkkQfyJRMEpCrUk%3D&az=oaivgprodscus') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Montserrat', Arial, sans-serif;
+      color: #fff;
+      min-width: 100vw;
+      min-height: 100vh;
+      box-sizing: border-box;
+      display: block;
+    }
+    .bottom-bar {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100vw;
+      background: rgba(56,69,31,0.82);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 36px;
+      padding: 18px 0 14px 0;
+      z-index: 100;
+      font-family: 'Permanent Marker', 'Montserrat', Arial, sans-serif;
+      font-size: 1.35em;
+      box-shadow: 0 -2px 12px #0005;
+      letter-spacing: 0.5px;
+    }
+    .bottom-bar a {
+      color: #f47a2c;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 6px 18px;
+      border-radius: 8px;
+      transition: background 0.18s, color 0.18s;
+      background: transparent;
+    }
+    .bottom-bar a:hover {
+      background: #38451f;
+      color: #f47a2c;
+    }
+    .bg-fade {
+      display: none;
+    }
+    .contact-hero {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+    }
+    .contact-title {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 3.2vw;
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: 2px;
+      margin-bottom: 2vw;
+      text-align: center;
+      text-shadow: 2px 2px 0 #000, 0 0 32px #000a;
+    }
+    .contact-form {
+      width: 32vw;
+      max-width: 480px;
+      min-width: 220px;
+      display: flex;
+      flex-direction: column;
+      gap: 1vw;
+      background: none;
+      align-items: stretch;
+    }
+    .contact-form label {
+      font-weight: 500;
+      color: #fff;
+      font-size: 1em;
+      margin-bottom: 0.2em;
+      letter-spacing: 0.5px;
+      text-shadow: 1px 1px 0 #000a;
+    }
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 0.8em 1em;
+      border-radius: 4px;
+      border: none;
+      font-size: 1em;
+      background: #f7f2e7;
+      color: #222;
+      font-family: inherit;
+      margin-bottom: 0.3vw;
+      box-sizing: border-box;
+      box-shadow: none;
+      resize: none;
+    }
+    .contact-form textarea {
+      min-height: 3em;
+      max-height: 8em;
+      resize: vertical;
+    }
+    .contact-form button {
+      background: #c46a1a;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 0.8em 0;
+      font-size: 1em;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.18s, color 0.18s;
+      margin-top: 0.8vw;
+      box-shadow: 0 2px 8px #0002;
+      letter-spacing: 1.5px;
+      text-shadow: 1px 1px 0 #000a;
+      width: 40%;
+      align-self: center;
+    }
+    .contact-form button:hover {
+      background: #f47a2c;
+      color: #fffbe9;
+    }
+    .logo-link {
+      position: fixed;
+      top: 2vw;
+      left: 6vw;
+      z-index: 10;
+      background: transparent;
+      padding: 0;
+    }
+    .logo-img {
+      width: 20vw;
+      min-width: 100px;
+      max-width: 320px;
+      height: auto;
+      filter: brightness(1.35) drop-shadow(0 0 16px #fff8);
+      transition: width 0.2s, top 0.2s, left 0.2s;
+    }
+    @media (max-width: 600px) {
+      .logo-link {
+        top: 12vw;
+        left: 2vw;
+      }
+      .logo-img {
+        width: 38vw;
+        min-width: 80px;
+        max-width: 180px;
+      }
+      .contact-form { width: 96vw; }
+      .contact-title { font-size: 9vw; }
+    }
+    @media (max-width: 900px) {
+      .contact-form { width: 70vw; }
+      .contact-title { font-size: 6vw; }
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="logo-link"><img src="https://i.ibb.co/m5bVFqcV/Chat-GPT-Image-Aug-28-2025-at-02-46-48-PM-removebg-preview.png" alt="Chat-GPT-Image-Aug-28-2025-at-02-46-48-PM-removebg-preview" class="logo-img" border="0"></a>
+  <div class="contact-hero">
+    <div class="contact-title">CONTACT ME</div>
+    <form class="contact-form" autocomplete="off">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+      <label for="message">Message</label>
+      <textarea id="message" name="message" required></textarea>
+      <button type="submit">SUBMIT</button>
+    </form>
+  </div>
+  <script>
+    document.querySelector('.contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you for reaching out! This demo does not send real messages.');
+      this.reset();
+    });
+    // Zoom-in effect on hotspot hover for contact page (same as home)
+    function setupHotspotZoom() {
+      document.querySelectorAll('.hotspot').forEach(function(hotspot) {
+        hotspot.addEventListener('mouseenter', function(e) {
+          const bg = document.body;
+          const xPercent = hotspot.getAttribute('data-bg-x') || 50;
+          const yPercent = hotspot.getAttribute('data-bg-y') || 50;
+          bg.style.transition = 'background-size 0.5s cubic-bezier(.4,2,.6,1), background-position 0.5s cubic-bezier(.4,2,.6,1)';
+          bg.style.backgroundSize = '180% 180%';
+          bg.style.backgroundPosition = `${xPercent}% ${yPercent}%`;
+        });
+        hotspot.addEventListener('mouseleave', function(e) {
+          const bg = document.body;
+          bg.style.transition = 'background-size 0.5s, background-position 0.5s';
+          bg.style.backgroundSize = 'cover';
+          bg.style.backgroundPosition = '50% 50%';
+        });
+      });
+    }
+    window.addEventListener('DOMContentLoaded', setupHotspotZoom);
+  </script>
+</body>
+</html>
