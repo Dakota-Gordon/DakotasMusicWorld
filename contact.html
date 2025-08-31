@@ -54,6 +54,13 @@
       background: #38451f;
       color: #f47a2c;
     }
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 200;
+    }
     .bg-fade {
       display: none;
     }
@@ -214,11 +221,7 @@
         display: none !important;
       }
       .mobile-nav {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 200;
+        display: block;
       }
       .hamburger {
         display: flex;
