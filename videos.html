@@ -1,42 +1,4 @@
-    @media (max-width: 600px) {
-      .logo-link {
-        top: 12vw;
-        left: 2vw;
-      }
-      .logo-img {
-        width: 38vw;
-        min-width: 80px;
-        max-width: 180px;
-      }
-      .bottom-bar {
-        font-size: 1.1em;
-        gap: 10px;
-        padding: 10px 0 8px 0;
-      }
-      .bottom-bar a {
-        padding: 6px 8px;
-        font-size: 1em;
-      }
-      .photos-hero, .videos-hero {
-        padding-top: 10vw;
-        padding-bottom: 18vw;
-        min-height: 100vh;
-        box-sizing: border-box;
-      }
-      .videos-title {
-        font-size: 9vw !important;
-        margin-bottom: 5vw;
-        padding: 0 2vw;
-      }
-    }
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Videos | Dakota's Music World</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Permanent+Marker&display=swap" rel="stylesheet">
-    <style>
+
       html, body {
         height: 100%;
         margin: 0;
@@ -46,7 +8,8 @@
         width: 100vw;
         height: 100vh;
         overflow: hidden;
-        background: #000;
+        background: #000 url('https://videos.openai.com/vg-assets/assets%2Ftask_01k3rt7bzzespt7mep56qyhs6s%2F1756400852_img_0.webp?st=2025-08-28T15%3A52%3A53Z&se=2025-09-03T16%3A52%3A53Z&sks=b&skt=2025-08-28T15%3A52%3A53Z&ske=2025-09-03T16%3A52%3A53Z&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skoid=aa5ddad1-c91a-4f0a-9aca-e20682cc8969&skv=2019-02-02&sv=2018-11-09&sr=b&sp=r&spr=https%2Chttp&sig=8X%2B%2Bf5os0GjZlKZUQ3rkgqCUku3L%2FkkQfyJRMEpCrUk%3D&az=oaivgprodscus') no-repeat center center fixed;
+        background-size: cover;
         display: block;
         font-family: 'Montserrat', Arial, sans-serif;
         color: #fff;
@@ -54,50 +17,11 @@
         min-height: 100vh;
         box-sizing: border-box;
       }
-      .bg-img-container {
-        position: fixed;
-        left: 0; top: 0;
-        width: 100vw;
-        height: 100vh;
-        z-index: 0;
-        overflow: hidden;
-      }
-      .bg-img {
-        width: 100vw;
-        height: 100vh;
-        object-fit: cover;
-        object-position: center 15%;
-        position: absolute;
-        left: 0; top: 0;
-        z-index: 0;
-        user-select: none;
-        pointer-events: none;
-      }
-      .logo-link {
-          <style>
-            html, body {
-              height: 100%;
-              margin: 0;
-              padding: 0;
-            }
-            body {
-              width: 100vw;
-              height: 100vh;
-              overflow: hidden;
-              background: #000 url('https://videos.openai.com/vg-assets/assets%2Ftask_01k3rt7bzzespt7mep56qyhs6s%2F1756400852_img_0.webp?st=2025-08-28T15%3A52%3A53Z&se=2025-09-03T16%3A52%3A53Z&sks=b&skt=2025-08-28T15%3A52%3A53Z&ske=2025-09-03T16%3A52%3A53Z&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skoid=aa5ddad1-c91a-4f0a-9aca-e20682cc8969&skv=2019-02-02&sv=2018-11-09&sr=b&sp=r&spr=https%2Chttp&sig=8X%2B%2Bf5os0GjZlKZUQ3rkgqCUku3L%2FkkQfyJRMEpCrUk%3D&az=oaivgprodscus') no-repeat center center fixed;
-              background-size: cover;
-              display: block;
-              font-family: 'Montserrat', Arial, sans-serif;
-              color: #fff;
-              min-width: 100vw;
-              min-height: 100vh;
-              box-sizing: border-box;
-            }
-            /* Removed the bg-img-container and bg-img styles */
+      .bottom-bar {
         position: fixed;
         left: 0;
         bottom: 0;
-          <!-- Background image is now set via CSS on the body -->
+        width: 100vw;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -121,6 +45,36 @@
       .bottom-bar a:hover {
         background: #38451f;
         color: #f47a2c;
+      }
+      .logo-link {
+        position: fixed;
+        top: 2vw;
+        left: 6vw;
+        z-index: 10;
+        background: transparent;
+        padding: 0;
+      }
+      .logo-img {
+        width: 20vw;
+        min-width: 100px;
+        max-width: 320px;
+        height: auto;
+        filter: brightness(1.35) drop-shadow(0 0 16px #fff8);
+        transition: width 0.2s, top 0.2s, left 0.2s;
+      }
+      .photos-hero, .videos-hero {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 1;
+        padding-top: 10vw;
+        padding-bottom: 18vw;
+        min-height: 100vh;
+        box-sizing: border-box;
       }
       .hotspot {
         position: absolute;
@@ -180,24 +134,46 @@
       .hotspot:hover .hotspot-label {
         opacity: 1;
       }
-    </style>
-  </head>
-  <body>
-    <div class="bg-img-container">
-      <img src="concertbackground.png" class="bg-img" alt="Dakota's Music World Concert Collection VHS" />
-    </div>
-    <a href="index.html" class="logo-link"><img src="https://i.ibb.co/m5bVFqcV/Chat-GPT-Image-Aug-28-2025-at-02-46-48-PM-removebg-preview.png" alt="Logo" class="logo-img" border="0"></a>
-    <div class="photos-hero">
-      <!-- Hotspot: Concert Video (Live Recordings) -->
-      <!-- Add your videos content here -->
-    </div>
-    <nav class="bottom-bar">
-      <a href="/index.html">Home</a>
-      <a href="/photos.html">Photography</a>
-      <a href="/videos.html">Live Recordings</a>
-      <a href="/interviews.html">Interviews</a>
-      <a href="/contact.html">Contact</a>
-    </nav>
-  </body>
-  </html>
+      @media (max-width: 600px) {
+        .logo-link {
+          top: 12vw;
+          left: 2vw;
+        }
+        .logo-img {
+          width: 38vw;
+          min-width: 80px;
+          max-width: 180px;
+        }
+        .bottom-bar {
+          font-size: 1.1em;
+          gap: 10px;
+          padding: 10px 0 8px 0;
+        }
+        .bottom-bar a {
+          padding: 6px 8px;
+          font-size: 1em;
+        }
+        .photos-hero, .videos-hero {
+          padding-top: 10vw;
+          padding-bottom: 18vw;
+          min-height: 100vh;
+          box-sizing: border-box;
+        }
+    }
+  </style>
+</head>
+<body>
+  <a href="/index.html" class="logo-link"><img src="https://i.ibb.co/m5bVFqcV/Chat-GPT-Image-Aug-28-2025-at-02-46-48-PM-removebg-preview.png" alt="Logo" class="logo-img" border="0"></a>
+  <div class="photos-hero">
+    <!-- Add your videos content here -->
+  </div>
+  <nav class="bottom-bar">
+    <a href="/index.html">Home</a>
+    <a href="/photos.html">Photography</a>
+    <a href="/videos.html">Live Recordings</a>
+    <a href="/interviews.html">Interviews</a>
+    <a href="/contact.html">Contact</a>
+  </nav>
+</body>
+</html>
 
