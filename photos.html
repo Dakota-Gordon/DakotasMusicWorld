@@ -7,20 +7,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Permanent+Marker&display=swap" rel="stylesheet">
   <style>
     html, body {
-      height: 100%;
       margin: 0;
       padding: 0;
+      height: 100%;
+      min-height: 100vh;
     }
     body {
       width: 100vw;
-      height: 100vh;
-      overflow: hidden;
+      min-width: 100vw;
+      min-height: 100vh;
       background: #000 url('https://videos.openai.com/vg-assets/assets%2Ftask_01k3rt7bzzespt7mep56qyhs6s%2F1756400852_img_0.webp?st=2025-08-28T15%3A52%3A53Z&se=2025-09-03T16%3A52%3A53Z&sks=b&skt=2025-08-28T15%3A52%3A53Z&ske=2025-09-03T16%3A52%3A53Z&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skoid=aa5ddad1-c91a-4f0a-9aca-e20682cc8969&skv=2019-02-02&sv=2018-11-09&sr=b&sp=r&spr=https%2Chttp&sig=8X%2B%2Bf5os0GjZlKZUQ3rkgqCUku3L%2FkkQfyJRMEpCrUk%3D&az=oaivgprodscus') no-repeat center center fixed;
       background-size: cover;
       font-family: 'Montserrat', Arial, sans-serif;
       color: #fff;
-      min-width: 100vw;
-      min-height: 100vh;
       box-sizing: border-box;
       display: block;
     }
@@ -55,9 +54,16 @@
       background: #38451f;
       color: #f47a2c;
     }
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 200;
+    }
     .logo-link {
       position: fixed;
-  min-height: 100vh;
+      top: 2vw;
       left: 6vw;
       z-index: 10;
       background: transparent;
@@ -73,13 +79,16 @@
     }
     .photos-hero {
       width: 100vw;
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       position: relative;
       z-index: 1;
+      padding-top: 5vh;
+      padding-bottom: 5vh;
+      box-sizing: border-box;
     }
     .photos-title {
       font-family: 'Montserrat', Arial, sans-serif;
@@ -92,16 +101,44 @@
       text-shadow: 2px 2px 0 #000, 0 0 32px #000a;
     }
     @media (max-width: 600px) {
+      html, body {
+        height: auto;
+        min-height: 100vh;
+      }
+      body {
+        overflow-x: hidden;
+        overflow-y: auto;
+        height: auto;
+        min-height: 100vh;
+      }
       .logo-link {
-        top: 12vw;
-        left: 2vw;
+        top: 2vw;
+        left: 0;
+        width: 100%;
+        text-align: center;
       }
       .logo-img {
         width: 38vw;
         min-width: 80px;
         max-width: 180px;
       }
-      .photos-title { font-size: 9vw; }
+      .bottom-bar {
+        display: none !important;
+      }
+      .mobile-nav {
+        display: block;
+      }
+      .photos-hero {
+        padding-top: 28vw;
+        padding-bottom: 18vw;
+        min-height: unset;
+        box-sizing: border-box;
+      }
+      .photos-title {
+        font-size: 9vw;
+        margin-bottom: 5vw;
+        padding: 0 2vw;
+      }
     }
     @media (max-width: 900px) {
       .photos-title { font-size: 6vw; }
@@ -109,7 +146,6 @@
   </style>
 </head>
 <body>
-  <a href="index.html" class="logo-link"><img src="https://i.ibb.co/m5bVFqcV/Chat-GPT-Image-Aug-28-2025-at-02-46-48-PM-removebg-preview.png" alt="Logo" class="logo-img" border="0"></a>
   <nav class="bottom-bar">
     <a href="/index.html">Home</a>
     <a href="/photos.html">Photography</a>
@@ -117,6 +153,40 @@
     <a href="/interviews.html">Interviews</a>
     <a href="/contact.html">Contact</a>
   </nav>
+  <div class="mobile-nav">
+    <button class="hamburger" aria-label="Open navigation menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="mobile-menu">
+      <a href="/index.html">Home</a>
+      <a href="/photos.html">Photography</a>
+      <a href="/videos.html">Live Recordings</a>
+      <a href="/interviews.html">Interviews</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+  <a href="/index.html" class="logo-link"><img src="https://i.ibb.co/m5bVFqcV/Chat-GPT-Image-Aug-28-2025-at-02-46-48-PM-removebg-preview.png" alt="Logo" class="logo-img" border="0"></a>
   <div class="photos-hero">
+    <div class="photos-title">PHOTOGRAPHY</div>
     <!-- Add your photo gallery or content here -->
   </div>
+  <script>
+    // Hamburger menu toggle for mobile
+    document.addEventListener('DOMContentLoaded', function() {
+      var hamburger = document.querySelector('.hamburger');
+      var menu = document.querySelector('.mobile-menu');
+      if (hamburger && menu) {
+        hamburger.addEventListener('click', function() {
+          menu.classList.toggle('open');
+        });
+        // Optional: close menu when a link is clicked
+        menu.querySelectorAll('a').forEach(function(link) {
+          link.addEventListener('click', function() {
+            menu.classList.remove('open');
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>
