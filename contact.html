@@ -244,7 +244,7 @@
         transition: 0.2s;
       }
       .mobile-menu {
-        display: flex;
+        display: block;
         flex-direction: column;
         position: absolute;
         top: 56px;
@@ -264,6 +264,7 @@
         transition: max-height 0.35s cubic-bezier(0.4,0,0.2,1), opacity 0.25s;
       }
       .mobile-menu.open {
+        display: flex;
         max-height: 500px;
         opacity: 1;
         transition: max-height 0.35s cubic-bezier(0.4,0,0.2,1), opacity 0.25s;
