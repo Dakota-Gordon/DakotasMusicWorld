@@ -8,44 +8,147 @@ body.zoomed-photography .hotspot-label {
 	</style>
 </head>
 <body>
-			<nav class="bottom-bar">
-				<a href="/index.html">Home</a>
-				<a href="/photos.html">Photography</a>
-				<a href="/videos.html">Live Recordings</a>
-				<a href="/interviews.html">Interviews</a>
-				<a href="/contact.html">Contact</a>
-			</nav>
-			<div class="mobile-nav">
-				<button class="hamburger" aria-label="Open navigation menu">
-					<span></span><span></span><span></span>
-				</button>
-				<div class="mobile-menu">
+				<nav class="bottom-bar">
 					<a href="/index.html">Home</a>
 					<a href="/photos.html">Photography</a>
 					<a href="/videos.html">Live Recordings</a>
 					<a href="/interviews.html">Interviews</a>
 					<a href="/contact.html">Contact</a>
+				</nav>
+				<div class="mobile-nav">
+					<button class="hamburger" aria-label="Open navigation menu">
+						<span></span><span></span><span></span>
+					</button>
+					<div class="mobile-menu">
+						<a href="/index.html">Home</a>
+						<a href="/photos.html">Photography</a>
+						<a href="/videos.html">Live Recordings</a>
+						<a href="/interviews.html">Interviews</a>
+						<a href="/contact.html">Contact</a>
+					</div>
 				</div>
-			</div>
-			<a href="/index.html" class="logo-link"><img src="https://i.ibb.co/m5bVFqcV/Chat-GPT-Image-Aug-28-2025-at-02-46-48-PM-removebg-preview.png" alt="Logo" class="logo-img" border="0"></a>
-			<script>
-				// Hamburger menu toggle for mobile
-				document.addEventListener('DOMContentLoaded', function() {
-					var hamburger = document.querySelector('.hamburger');
-					var menu = document.querySelector('.mobile-menu');
-					if (hamburger && menu) {
-						hamburger.addEventListener('click', function() {
-							menu.classList.toggle('open');
-						});
-						// Optional: close menu when a link is clicked
-						menu.querySelectorAll('a').forEach(function(link) {
-							link.addEventListener('click', function() {
-								menu.classList.remove('open');
+				<a href="/index.html" class="logo-link"><img src="https://i.ibb.co/m5bVFqcV/Chat-GPT-Image-Aug-28-2025-at-02-46-48-PM-removebg-preview.png" alt="Logo" class="logo-img" border="0"></a>
+				<script>
+					// Hamburger menu toggle for mobile
+					document.addEventListener('DOMContentLoaded', function() {
+						var hamburger = document.querySelector('.hamburger');
+						var menu = document.querySelector('.mobile-menu');
+						if (hamburger && menu) {
+							hamburger.addEventListener('click', function() {
+								menu.classList.toggle('open');
 							});
-						});
-					}
-				});
-			</script>
+							// Optional: close menu when a link is clicked
+							menu.querySelectorAll('a').forEach(function(link) {
+								link.addEventListener('click', function() {
+									menu.classList.remove('open');
+								});
+							});
+						}
+					});
+				</script>
+	<style>
+		.mobile-nav { display: none; position: fixed; top: 0; left: 0; z-index: 200; }
+		@media (max-width: 600px) {
+			html, body {
+				height: auto;
+				min-height: 100vh;
+			}
+			body {
+				overflow-x: hidden;
+				overflow-y: auto;
+				height: auto;
+				min-height: 100vh;
+			}
+			.logo-link {
+				top: 2vw;
+				left: 0;
+				width: 100%;
+				text-align: center;
+			}
+			.logo-img {
+				width: 38vw;
+				min-width: 80px;
+				max-width: 180px;
+			}
+			.hamburger {
+				width: 48px;
+				height: 48px;
+				margin-top: 6vw;
+			}
+			.bottom-bar {
+				display: none !important;
+			}
+			.mobile-nav {
+				display: block;
+			}
+			.hamburger {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				width: 48px;
+				height: 48px;
+				background: rgba(56,69,31,0.82);
+				border: none;
+				border-radius: 8px;
+				margin: 10px 0 0 10px;
+				cursor: pointer;
+				z-index: 201;
+			}
+			.hamburger span {
+				display: block;
+				width: 28px;
+				height: 4px;
+				margin: 3px 0;
+				background: #f47a2c;
+				border-radius: 2px;
+				transition: 0.2s;
+			}
+			.mobile-menu {
+				display: block;
+				flex-direction: column;
+				position: absolute;
+				top: 56px;
+				left: 0;
+				width: 60vw;
+				min-width: 160px;
+				max-width: 240px;
+				background: rgba(56,69,31,0.98);
+				border-radius: 18px !important;
+				box-shadow: 0 4px 16px #0008;
+				padding: 2px 8px;
+				box-sizing: border-box;
+				z-index: 202;
+				max-height: 0;
+				overflow: hidden;
+				opacity: 0;
+				text-align: left;
+				transition: max-height 0.35s cubic-bezier(0.4,0,0.2,1), opacity 0.25s;
+			}
+			.mobile-menu.open {
+				display: flex;
+				max-height: 500px;
+				opacity: 1;
+				transition: max-height 0.35s cubic-bezier(0.4,0,0.2,1), opacity 0.25s;
+			}
+			.mobile-menu a {
+				color: #f47a2c;
+				text-decoration: none;
+				font-weight: 700;
+				padding: 8px 8px;
+				display: block;
+				font-size: 1.1em;
+				border-bottom: 1px solid #38451f;
+				text-align: left;
+			}
+			.mobile-menu a:last-child {
+				border-bottom: none;
+			}
+			.mobile-menu.open {
+				display: flex;
+			}
+		}
+	</style>
 	<style>
 		.mobile-nav { display: none; position: fixed; top: 0; left: 0; z-index: 200; }
 		@media (max-width: 600px) {
