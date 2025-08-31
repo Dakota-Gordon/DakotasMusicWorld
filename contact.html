@@ -203,29 +203,65 @@
         margin-top: 2vw;
       }
       .bottom-bar {
-        font-size: 1em;
-        flex-wrap: wrap;
-        padding: 2px 0 2px 0;
-        row-gap: 0;
-        column-gap: 0;
-        white-space: normal;
-        justify-content: flex-start;
+        display: none !important;
       }
-      .bottom-bar a {
-        width: 50%;
-        box-sizing: border-box;
-        padding: 4px 0;
-        font-size: 1em;
+      .mobile-nav {
         display: block;
-        text-align: center;
-        border-radius: 0;
-        margin: 0;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 200;
       }
-      .bottom-bar a:nth-child(odd) {
-        border-right: 1px solid rgba(255,255,255,0.08);
+      .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 48px;
+        height: 48px;
+        background: rgba(56,69,31,0.82);
+        border: none;
+        border-radius: 8px;
+        margin: 10px 10px 0 0;
+        cursor: pointer;
+        z-index: 201;
       }
-      .bottom-bar a:nth-child(-n+2) {
-        border-bottom: 1px solid rgba(255,255,255,0.08);
+      .hamburger span {
+        display: block;
+        width: 28px;
+        height: 4px;
+        margin: 3px 0;
+        background: #f47a2c;
+        border-radius: 2px;
+        transition: 0.2s;
+      }
+      .mobile-menu {
+        display: none;
+        position: absolute;
+        top: 56px;
+        right: 0;
+        background: rgba(56,69,31,0.98);
+        border-radius: 0 0 12px 12px;
+        box-shadow: 0 4px 16px #0008;
+        min-width: 180px;
+        flex-direction: column;
+        padding: 8px 0;
+        z-index: 202;
+      }
+      .mobile-menu a {
+        color: #f47a2c;
+        text-decoration: none;
+        font-weight: 700;
+        padding: 12px 24px;
+        display: block;
+        font-size: 1.1em;
+        border-bottom: 1px solid #38451f;
+      }
+      .mobile-menu a:last-child {
+        border-bottom: none;
+      }
+      .mobile-menu.open {
+        display: flex;
       }
       .contact-hero {
         padding-top: 10vw;
@@ -248,6 +284,18 @@
     <a href="/interviews.html">Interviews</a>
     <a href="/contact.html">Contact</a>
   </nav>
+  <div class="mobile-nav">
+    <button class="hamburger" aria-label="Open navigation menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="mobile-menu">
+      <a href="/index.html">Home</a>
+      <a href="/photos.html">Photography</a>
+      <a href="/videos.html">Live Recordings</a>
+      <a href="/interviews.html">Interviews</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
   <a href="/index.html" class="logo-link"><img src="https://i.ibb.co/m5bVFqcV/Chat-GPT-Image-Aug-28-2025-at-02-46-48-PM-removebg-preview.png" alt="Logo" class="logo-img" border="0"></a>
   <div class="contact-hero">
     <div class="contact-title">CONTACT ME</div>
@@ -263,5 +311,23 @@
     </form>
   </div>
   <!-- No JS needed, handled by Formspree -->
+  <script>
+    // Hamburger menu toggle for mobile
+    document.addEventListener('DOMContentLoaded', function() {
+      var hamburger = document.querySelector('.hamburger');
+      var menu = document.querySelector('.mobile-menu');
+      if (hamburger && menu) {
+        hamburger.addEventListener('click', function() {
+          menu.classList.toggle('open');
+        });
+        // Optional: close menu when a link is clicked
+        menu.querySelectorAll('a').forEach(function(link) {
+          link.addEventListener('click', function() {
+            menu.classList.remove('open');
+          });
+        });
+      }
+    });
+  </script>
 </body>
 </html>
