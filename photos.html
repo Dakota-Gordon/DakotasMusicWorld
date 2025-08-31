@@ -42,6 +42,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <style>
+    .fade-content {
+      opacity: 0;
+      transition: opacity 0.5s cubic-bezier(.4,0,.2,1);
+    }
+    .fade-content.visible {
+      opacity: 1;
+    }
+    .fade-content.fade-out {
+      opacity: 0 !important;
+      transition: opacity 0.4s cubic-bezier(.4,0,.2,1);
+    }
+  </style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Photos | Dakota's Music World</title>
@@ -138,12 +151,45 @@
   </style>
 </head>
 <body>
-  <a href="index.html" class="logo-link"><img src="https://i.ibb.co/m5bVFqcV/Chat-GPT-Image-Aug-28-2025-at-02-46-48-PM-removebg-preview.png" alt="Logo" class="logo-img" border="0"></a>
-  <div class="bg-img-container">
-  <img src="camera.png" class="bg-img" alt="Photos Background" />
-  </div>
-  <div class="photos-hero">
-    <!-- Add your photo gallery or content here -->
+  <script>
+    // Fade in on load
+    document.addEventListener('DOMContentLoaded', function() {
+      var fade = document.querySelector('.fade-content');
+      if (fade) {
+        setTimeout(function() {
+          fade.classList.add('visible');
+        }, 10);
+      }
+      // Fade out on navigation
+      document.querySelectorAll('a').forEach(function(link) {
+        var href = link.getAttribute('href');
+        if (href && !href.startsWith('#') && !link.hasAttribute('target')) {
+          link.addEventListener('click', function(e) {
+            // Only fade if local navigation
+            if (link.hostname === location.hostname || href.startsWith('/')) {
+              var fade = document.querySelector('.fade-content');
+              if (fade) {
+                e.preventDefault();
+                fade.classList.remove('visible');
+                fade.classList.add('fade-out');
+                setTimeout(function() {
+                  window.location = link.href;
+                }, 400);
+              }
+            }
+          });
+        }
+      });
+    });
+  </script>
+  <div class="fade-content">
+    <a href="index.html" class="logo-link"><img src="https://i.ibb.co/m5bVFqcV/Chat-GPT-Image-Aug-28-2025-at-02-46-48-PM-removebg-preview.png" alt="Logo" class="logo-img" border="0"></a>
+    <div class="bg-img-container">
+      <img src="camera.png" class="bg-img" alt="Photos Background" />
+    </div>
+    <div class="photos-hero">
+      <!-- Add your photo gallery or content here -->
+    </div>
   </div>
 </body>
 </html>

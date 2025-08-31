@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<style>
+		.fade-content {
+			opacity: 0;
+			transition: opacity 0.5s cubic-bezier(.4,0,.2,1);
+		}
+		.fade-content.visible {
+			opacity: 1;
+		}
+		.fade-content.fade-out {
+			opacity: 0 !important;
+			transition: opacity 0.4s cubic-bezier(.4,0,.2,1);
+		}
+	</style>
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Permanent+Marker&display=swap" rel="stylesheet">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -268,32 +281,66 @@
 		}
 	</style>
 </head>
+
 <body>
-	<nav class="bottom-bar">
-		<a href="/index.html">Home</a>
-		<a href="/photos.html">Photography</a>
-		<a href="/videos.html">Live Recordings</a>
-		<a href="/interviews.html">Interviews</a>
-		<a href="/contact.html">Contact</a>
-	</nav>
+	<script>
+		// Fade in on load
+		document.addEventListener('DOMContentLoaded', function() {
+			var fade = document.querySelector('.fade-content');
+			if (fade) {
+				setTimeout(function() {
+					fade.classList.add('visible');
+				}, 10);
+			}
+			// Fade out on navigation
+			document.querySelectorAll('a').forEach(function(link) {
+				var href = link.getAttribute('href');
+				if (href && !href.startsWith('#') && !link.hasAttribute('target')) {
+					link.addEventListener('click', function(e) {
+						// Only fade if local navigation
+						if (link.hostname === location.hostname || href.startsWith('/')) {
+							var fade = document.querySelector('.fade-content');
+							if (fade) {
+								e.preventDefault();
+								fade.classList.remove('visible');
+								fade.classList.add('fade-out');
+								setTimeout(function() {
+									window.location = link.href;
+								}, 400);
+							}
+						}
+					});
+				}
+			});
+		});
+	</script>
+	<div class="fade-content">
+		<nav class="bottom-bar">
+			<a href="/index.html">Home</a>
+			<a href="/photos.html">Photography</a>
+			<a href="/videos.html">Live Recordings</a>
+			<a href="/interviews.html">Interviews</a>
+			<a href="/contact.html">Contact</a>
+		</nav>
 		<!-- Background is now set via CSS -->
-										<a href="/index.html" class="logo-link"><img src="https://i.ibb.co/m5bVFqcV/Chat-GPT-Image-Aug-28-2025-at-02-46-48-PM-removebg-preview.png" alt="Chat-GPT-Image-Aug-28-2025-at-02-46-48-PM-removebg-preview" class="logo-img" border="0"></a>
+		<a href="/index.html" class="logo-link"><img src="https://i.ibb.co/m5bVFqcV/Chat-GPT-Image-Aug-28-2025-at-02-46-48-PM-removebg-preview.png" alt="Chat-GPT-Image-Aug-28-2025-at-02-46-48-PM-removebg-preview" class="logo-img" border="0"></a>
 
-			<!-- Hotspot: Coffee Table (Interviews) -->
-			<a href="/interviews.html" class="hotspot" style="top: 44%; left: 65%;" data-bg-x="50" data-bg-y="50">
-				<span class="hotspot-label">Interviews</span>
-			</a>
+		<!-- Hotspot: Coffee Table (Interviews) -->
+		<a href="/interviews.html" class="hotspot" style="top: 44%; left: 65%;" data-bg-x="50" data-bg-y="50">
+			<span class="hotspot-label">Interviews</span>
+		</a>
 
-			<!-- Hotspot: Camera (Photography) -->
-			<a href="/photos.html" class="hotspot" style="top: 50%; left: 12%;" data-bg-x="50" data-bg-y="50">
-				<span class="hotspot-label">Photography</span>
-			</a>
-<!-- No special JS for Photography hotspot -->
+		<!-- Hotspot: Camera (Photography) -->
+		<a href="/photos.html" class="hotspot" style="top: 50%; left: 12%;" data-bg-x="50" data-bg-y="50">
+			<span class="hotspot-label">Photography</span>
+		</a>
+		<!-- No special JS for Photography hotspot -->
 
-			<!-- Hotspot: TV (Live Recordings) -->
-			<a href="/videos.html" class="hotspot" style="top: 15%; left: 70%;" data-bg-x="50" data-bg-y="50">
-				<span class="hotspot-label">Live Recordings</span>
-			</a>
+		<!-- Hotspot: TV (Live Recordings) -->
+		<a href="/videos.html" class="hotspot" style="top: 15%; left: 70%;" data-bg-x="50" data-bg-y="50">
+			<span class="hotspot-label">Live Recordings</span>
+		</a>
+	</div>
 </body>
 	<style>
 			html, body {
