@@ -98,27 +98,7 @@
       letter-spacing: 0.5px;
       text-shadow: 1px 1px 0 #000a;
     }
-        .mobile-nav {
-          display: block;
-          position: fixed;
-          top: 0;
-          left: 0; /* Move to the left */
-          z-index: 9999; /* Increase z-index */
-        }
-        .hamburger {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          width: 48px;
-          height: 48px;
-          background: rgba(56,69,31,0.82);
-          border: none;
-          border-radius: 8px;
-          margin: 10px 10px 0 0;
-          cursor: pointer;
-          z-index: 10000; /* Increase z-index */
-        }
+
     .contact-form input, .contact-form textarea {
       width: 100%;
       padding: 0.8em 1em;
@@ -188,8 +168,9 @@
         min-height: 100vh;
       }
       .logo-link {
-        top: 4vw;
-        left: 18vw;
+        top: 2vw;
+        left: 50%;
+        transform: translateX(-50%);
       }
       .logo-img {
         width: 38vw;
@@ -243,7 +224,7 @@
         background: rgba(56,69,31,0.82);
         border: none;
         border-radius: 8px;
-        margin: 10px 10px 0 0;
+        margin: 10px 0 0 10px;
         cursor: pointer;
         z-index: 201;
       }
