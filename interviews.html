@@ -1,3 +1,12 @@
+  <!-- CSS moved to <head> -->
+<body>
+  <nav class="bottom-bar">
+  <a href="/index.html">Home</a>
+  <a href="/photos.html">Photography</a>
+  <a href="/videos.html">Live Recordings</a>
+  <a href="/interviews.html">Interviews</a>
+  <a href="/contact.html">Contact</a>
+  </nav>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,21 +16,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Permanent+Marker&display=swap" rel="stylesheet">
   <style>
     html, body {
+      height: 100%;
       margin: 0;
       padding: 0;
-      height: 100%;
-      min-height: 100vh;
     }
     body {
       width: 100vw;
-      min-width: 100vw;
-      min-height: 100vh;
-      background: #000 url('https://videos.openai.com/vg-assets/assets%2Ftask_01k3rt7bzzespt7mep56qyhs6s%2F1756400852_img_0.webp?st=2025-08-28T15%3A52%3A53Z&se=2025-09-03T16%3A52%3A53Z&sks=b&skt=2025-08-28T15%3A52%3A53Z&ske=2025-09-03T16%3A52%3A53Z&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skoid=aa5ddad1-c91a-4f0a-9aca-e20682cc8969&skv=2019-02-02&sv=2018-11-09&sr=b&sp=r&spr=https%2Chttp&sig=8X%2B%2Bf5os0GjZlKZUQ3rkgqCUku3L%2FkkQfyJRMEpCrUk%3D&az=oaivgprodscus') no-repeat center center fixed;
-      background-size: cover;
+      height: 100vh;
+      overflow: hidden;
+      background: #000;
+      display: block;
       font-family: 'Montserrat', Arial, sans-serif;
       color: #fff;
+      min-width: 100vw;
+      min-height: 100vh;
       box-sizing: border-box;
-      display: block;
     }
     .bottom-bar {
       position: fixed;
@@ -54,12 +63,27 @@
       background: #38451f;
       color: #f47a2c;
     }
-    .mobile-nav {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 200;
+    .bg-img-container {
+  position: fixed;
+  left: 0; top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  overflow: hidden;
+  /* background removed to prevent yellow flash */
+    }
+    .bg-img {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center center;
+  position: absolute;
+  left: 0; top: 0;
+  z-index: 0;
+  user-select: none;
+  pointer-events: none;
+  /* No background CSS here, image is set via <img> src */
+  transition: none;
     }
     .logo-link {
       position: fixed;
@@ -77,212 +101,7 @@
       filter: brightness(1.35) drop-shadow(0 0 16px #fff8);
       transition: width 0.2s, top 0.2s, left 0.2s;
     }
-    .interviews-hero {
-      width: 100vw;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      z-index: 1;
-      padding-top: 5vh;
-      padding-bottom: 5vh;
-      box-sizing: border-box;
-    }
-    .interviews-title {
-      font-family: 'Montserrat', Arial, sans-serif;
-      font-size: 3.5vw;
-      font-weight: 900;
-      color: #fff;
-      letter-spacing: 2px;
-      margin-bottom: 2vw;
-      text-align: center;
-      text-shadow: 2px 2px 0 #000, 0 0 32px #000a;
-    }
-    @media (max-width: 600px) {
-      html, body {
-        height: auto;
-        min-height: 100vh;
-      }
-      body {
-        overflow-x: hidden;
-        overflow-y: auto;
-        height: auto;
-        min-height: 100vh;
-      }
-      .logo-link {
-        top: 2vw;
-        left: 0;
-        width: 100%;
-        text-align: center;
-      }
-      .logo-img {
-        width: 38vw;
-        min-width: 80px;
-        max-width: 180px;
-      }
-      .bottom-bar {
-        display: none !important;
-      }
-      .mobile-nav {
-        display: block;
-      }
-      .interviews-hero {
-        padding-top: 28vw;
-        padding-bottom: 18vw;
-        min-height: unset;
-        box-sizing: border-box;
-      }
-      .interviews-title {
-        font-size: 9vw;
-        margin-bottom: 5vw;
-        padding: 0 2vw;
-      }
-    }
-    @media (max-width: 900px) {
-      .interviews-title { font-size: 6vw; }
-    }
-  </style>
-</head>
-<body>
-  <nav class="bottom-bar">
-    <a href="/index.html">Home</a>
-    <a href="/photos.html">Photography</a>
-    <a href="/videos.html">Live Recordings</a>
-    <a href="/interviews.html">Interviews</a>
-    <a href="/contact.html">Contact</a>
-  </nav>
-  <div class="mobile-nav">
-    <button class="hamburger" aria-label="Open navigation menu">
-      <span></span><span></span><span></span>
-    </button>
-    <div class="mobile-menu">
-      <a href="/index.html">Home</a>
-      <a href="/photos.html">Photography</a>
-      <a href="/videos.html">Live Recordings</a>
-      <a href="/interviews.html">Interviews</a>
-      <a href="/contact.html">Contact</a>
-    </div>
-  </div>
-  <a href="/index.html" class="logo-link"><img src="https://i.ibb.co/m5bVFqcV/Chat-GPT-Image-Aug-28-2025-at-02-46-48-PM-removebg-preview.png" alt="Logo" class="logo-img" border="0"></a>
-  <div class="interviews-hero">
-    <div class="interviews-title">INTERVIEWS</div>
-    <!-- Add your interviews content here -->
-  </div>
-  <script>
-    // Hamburger menu toggle for mobile
-    document.addEventListener('DOMContentLoaded', function() {
-      var hamburger = document.querySelector('.hamburger');
-      var menu = document.querySelector('.mobile-menu');
-      if (hamburger && menu) {
-        hamburger.addEventListener('click', function() {
-          menu.classList.toggle('open');
-        });
-        // Optional: close menu when a link is clicked
-        menu.querySelectorAll('a').forEach(function(link) {
-          link.addEventListener('click', function() {
-            menu.classList.remove('open');
-          });
-        });
-      }
-    });
-  </script>
-</body>
-</html>
-    
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Interviews | Dakota's Music World</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Permanent+Marker&display=swap" rel="stylesheet">
-  <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      width: 100vw;
-      height: 100vh;
-      overflow: hidden;
-      background: #000;
-      display: block;
-      font-family: 'Montserrat', Arial, sans-serif;
-      color: #fff;
-      min-width: 100vw;
-      min-height: 100vh;
-      box-sizing: border-box;
-    }
-          body {
-              background: #000 url('https://videos.openai.com/vg-assets/assets%2Ftask_01k3rt7bzzespt7mep56qyhs6s%2F1756400852_img_0.webp?st=2025-08-28T15%3A52%3A53Z&se=2025-09-03T16%3A52%3A53Z&sks=b&skt=2025-08-28T15%3A52%3A53Z&ske=2025-09-03T16%3A52%3A53Z&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skoid=aa5ddad1-c91a-4f0a-9aca-e20682cc8969&skv=2019-02-02&sv=2018-11-09&sr=b&sp=r&spr=https%2Chttp&sig=8X%2B%2Bf5os0GjZlKZUQ3rkgqCUku3L%2FkkQfyJRMEpCrUk%3D&az=oaivgprodscus') no-repeat center center fixed;
-              background-size: cover;
-            }
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      width: 100vw;
-      height: 100vh;
-      overflow: hidden;
-      background: #000 url('https://videos.openai.com/vg-assets/assets%2Ftask_01k3rt7bzzespt7mep56qyhs6s%2F1756400852_img_0.webp?st=2025-08-28T15%3A52%3A53Z&se=2025-09-03T16%3A52%3A53Z&sks=b&skt=2025-08-28T15%3A52%3A53Z&ske=2025-09-03T16%3A52%3A53Z&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skoid=aa5ddad1-c91a-4f0a-9aca-e20682cc8969&skv=2019-02-02&sv=2018-11-09&sr=b&sp=r&spr=https%2Chttp&sig=8X%2B%2Bf5os0GjZlKZUQ3rkgqCUku3L%2FkkQfyJRMEpCrUk%3D&az=oaivgprodscus') no-repeat center center fixed;
-      background-size: cover;
-      display: block;
-      font-family: 'Montserrat', Arial, sans-serif;
-      color: #fff;
-      min-width: 100vw;
-      min-height: 100vh;
-      box-sizing: border-box;
-    }
-    .bottom-bar {
-      position: fixed;
-      left: 0;
-      bottom: 0;
-      width: 100vw;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 36px;
-      padding: 18px 0 14px 0;
-      z-index: 100;
-      font-family: 'Permanent Marker', 'Montserrat', Arial, sans-serif;
-      font-size: 1.35em;
-      box-shadow: 0 -2px 12px #0005;
-      letter-spacing: 0.5px;
-    }
-    .bottom-bar a {
-      color: #f47a2c;
-      text-decoration: none;
-      font-weight: 700;
-      padding: 6px 18px;
-      border-radius: 8px;
-      transition: background 0.18s, color 0.18s;
-      background: transparent;
-    }
-    .bottom-bar a:hover {
-      background: #38451f;
-      color: #f47a2c;
-    }
-    .logo-link {
-      position: fixed;
-      top: 2vw;
-      left: 6vw;
-      z-index: 10;
-      background: transparent;
-      padding: 0;
-    }
-    .logo-img {
-      width: 20vw;
-      min-width: 100px;
-      max-width: 320px;
-      height: auto;
-      filter: brightness(1.35) drop-shadow(0 0 16px #fff8);
-      transition: width 0.2s, top 0.2s, left 0.2s;
-    }
-    .photos-hero, .interviews-hero {
+    .photos-hero {
       width: 100vw;
       height: 100vh;
       display: flex;
@@ -291,10 +110,6 @@
       justify-content: center;
       position: relative;
       z-index: 1;
-      padding-top: 10vw;
-      padding-bottom: 18vw;
-      min-height: 100vh;
-      box-sizing: border-box;
     }
     .hotspot {
       position: absolute;
@@ -341,24 +156,16 @@
         min-width: 80px;
         max-width: 180px;
       }
-      .bottom-bar {
-        font-size: 1.1em;
-        gap: 10px;
-        padding: 10px 0 8px 0;
-      }
-      .bottom-bar a {
-        padding: 6px 8px;
-        font-size: 1em;
-      }
-      .photos-hero, .interviews-hero {
-        padding-top: 10vw;
-        padding-bottom: 18vw;
-        min-height: 100vh;
-        box-sizing: border-box;
-      }
-      .interviews-title {
-        font-size: 9vw !important;
-        margin-bottom: 5vw;
-        padding: 0 2vw;
-      }
     }
+  </style>
+</head>
+<body>
+  <div class="bg-img-container">
+  <img src="iv.png" class="bg-img" alt="Interview Collection Background" />
+  </div>
+  <a href="/index.html" class="logo-link"><img src="https://i.ibb.co/m5bVFqcV/Chat-GPT-Image-Aug-28-2025-at-02-46-48-PM-removebg-preview.png" alt="Logo" class="logo-img" border="0"></a>
+  <div class="photos-hero">
+  <!-- Add your interviews content here -->
+  </div>
+</body>
+</html>

@@ -1,193 +1,191 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Videos | Dakota's Music World</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Permanent+Marker&display=swap" rel="stylesheet">
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      min-height: 100vh;
-    }
-    body {
-      width: 100vw;
-      min-width: 100vw;
-      min-height: 100vh;
-      background: #000 url('https://videos.openai.com/vg-assets/assets%2Ftask_01k3rt7bzzespt7mep56qyhs6s%2F1756400852_img_0.webp?st=2025-08-28T15%3A52%3A53Z&se=2025-09-03T16%3A52%3A53Z&sks=b&skt=2025-08-28T15%3A52%3A53Z&ske=2025-09-03T16%3A52%3A53Z&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skoid=aa5ddad1-c91a-4f0a-9aca-e20682cc8969&skv=2019-02-02&sv=2018-11-09&sr=b&sp=r&spr=https%2Chttp&sig=8X%2B%2Bf5os0GjZlKZUQ3rkgqCUku3L%2FkkQfyJRMEpCrUk%3D&az=oaivgprodscus') no-repeat center center fixed;
-      background-size: cover;
-      font-family: 'Montserrat', Arial, sans-serif;
-      color: #fff;
-      box-sizing: border-box;
-      display: block;
-    }
-    .bottom-bar {
-      position: fixed;
-      left: 0;
-      bottom: 0;
-      width: 100vw;
-      background: rgba(56,69,31,0.82);
-      color: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 36px;
-      padding: 18px 0 14px 0;
-      z-index: 100;
-      font-family: 'Permanent Marker', 'Montserrat', Arial, sans-serif;
-      font-size: 1.35em;
-      box-shadow: 0 -2px 12px #0005;
-      letter-spacing: 0.5px;
-    }
-    .bottom-bar a {
-      color: #f47a2c;
-      text-decoration: none;
-      font-weight: 700;
-      padding: 6px 18px;
-      border-radius: 8px;
-      transition: background 0.18s, color 0.18s;
-      background: transparent;
-    }
-    .bottom-bar a:hover {
-      background: #38451f;
-      color: #f47a2c;
-    }
-    .mobile-nav {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 200;
-    }
-    .logo-link {
-      position: fixed;
-      top: 2vw;
-      left: 6vw;
-      z-index: 10;
-      background: transparent;
-      padding: 0;
-    }
-    .logo-img {
-      width: 20vw;
-      min-width: 100px;
-      max-width: 320px;
-      height: auto;
-      filter: brightness(1.35) drop-shadow(0 0 16px #fff8);
-      transition: width 0.2s, top 0.2s, left 0.2s;
-    }
-    .videos-hero {
-      width: 100vw;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      z-index: 1;
-      padding-top: 5vh;
-      padding-bottom: 5vh;
-      box-sizing: border-box;
-    }
-    .videos-title {
-      font-family: 'Montserrat', Arial, sans-serif;
-      font-size: 3.5vw;
-      font-weight: 900;
-      color: #fff;
-      letter-spacing: 2px;
-      margin-bottom: 2vw;
-      text-align: center;
-      text-shadow: 2px 2px 0 #000, 0 0 32px #000a;
-    }
-    @media (max-width: 600px) {
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videos | Dakota's Music World</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <style>
       html, body {
-        height: auto;
-        min-height: 100vh;
+        height: 100%;
+        margin: 0;
+        padding: 0;
       }
       body {
-        overflow-x: hidden;
-        overflow-y: auto;
-        height: auto;
-        min-height: 100vh;
-      }
-      .logo-link {
-        top: 2vw;
-        left: 0;
-        width: 100%;
-        text-align: center;
-      }
-      .logo-img {
-        width: 38vw;
-        min-width: 80px;
-        max-width: 180px;
-      }
-      .bottom-bar {
-        display: none !important;
-      }
-      .mobile-nav {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        background: #000;
         display: block;
-      }
-      .videos-hero {
-        padding-top: 28vw;
-        padding-bottom: 18vw;
-        min-height: unset;
+        font-family: 'Montserrat', Arial, sans-serif;
+        color: #fff;
+        min-width: 100vw;
+        min-height: 100vh;
         box-sizing: border-box;
       }
-      .videos-title {
-        font-size: 9vw;
-        margin-bottom: 5vw;
-        padding: 0 2vw;
+      .bg-img-container {
+        position: fixed;
+        left: 0; top: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 0;
+        overflow: hidden;
       }
-    }
-    @media (max-width: 900px) {
-      .videos-title { font-size: 6vw; }
-    }
-  </style>
-</head>
-<body>
-  <nav class="bottom-bar">
-    <a href="/index.html">Home</a>
-    <a href="/photos.html">Photography</a>
-    <a href="/videos.html">Live Recordings</a>
-    <a href="/interviews.html">Interviews</a>
-    <a href="/contact.html">Contact</a>
-  </nav>
-  <div class="mobile-nav">
-    <button class="hamburger" aria-label="Open navigation menu">
-      <span></span><span></span><span></span>
-    </button>
-    <div class="mobile-menu">
+      .bg-img {
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        object-position: center 15%;
+        position: absolute;
+        left: 0; top: 0;
+        z-index: 0;
+        user-select: none;
+        pointer-events: none;
+      }
+      .logo-link {
+        position: fixed;
+        top: 2vw;
+        left: 6vw;
+        z-index: 10;
+        background: transparent;
+        padding: 0;
+      }
+      .logo-img {
+        width: 20vw;
+        min-width: 100px;
+        max-width: 320px;
+        height: auto;
+        filter: brightness(1.35) drop-shadow(0 0 16px #fff8);
+        transition: width 0.2s, top 0.2s, left 0.2s;
+      }
+      .photos-hero {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 1;
+      }
+      @media (max-width: 600px) {
+        .logo-link {
+          top: 12vw;
+          left: 2vw;
+        }
+        .logo-img {
+          width: 38vw;
+          min-width: 80px;
+          max-width: 180px;
+        }
+      }
+      .bottom-bar {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100vw;
+        background: rgba(56,69,31,0.82);
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 36px;
+        padding: 18px 0 14px 0;
+        z-index: 100;
+        font-family: 'Permanent Marker', 'Montserrat', Arial, sans-serif;
+        font-size: 1.35em;
+        box-shadow: 0 -2px 12px #0005;
+        letter-spacing: 0.5px;
+      }
+      .bottom-bar a {
+        color: #f47a2c;
+        text-decoration: none;
+        font-weight: 700;
+        padding: 6px 18px;
+        border-radius: 8px;
+        transition: background 0.18s, color 0.18s;
+        background: transparent;
+      }
+      .bottom-bar a:hover {
+        background: #38451f;
+        color: #f47a2c;
+      }
+      .hotspot {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        gap: 0;
+        padding: 0;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.08);
+        box-shadow: 0 2px 8px #0004;
+        border: 2px solid #f47a2c;
+        cursor: pointer;
+        z-index: 20;
+        transition: box-shadow 0.2s, background 0.2s, border 0.2s;
+      }
+      .hotspot::before {
+        content: '';
+        display: block;
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        border: 2px solid #fff;
+        background: #f47a2c;
+        opacity: 0.7;
+        box-sizing: border-box;
+        box-shadow: none;
+      }
+      .hotspot:hover {
+        box-shadow: 0 4px 16px #f47a2c44;
+        background: rgba(244,122,44,0.10);
+        border: 2px solid #fff;
+      }
+      .hotspot-label {
+        position: absolute;
+        top: 36px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: linear-gradient(90deg, #38451f 60%, #f47a2c 100%);
+        color: #fffbe7;
+        font-family: 'Permanent Marker', 'Montserrat', Arial, sans-serif;
+        font-size: 1.1em;
+        font-weight: bold;
+        letter-spacing: 1.2px;
+        text-shadow: 0 2px 8px #000, 0 0 2px #f47a2c;
+        border: 2px solid #f47a2c;
+        box-shadow: 0 2px 12px #f47a2c55, 0 0 0 2px #38451f;
+        padding: 5px 18px;
+        border-radius: 12px;
+        white-space: nowrap;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.2s, background 0.3s, color 0.3s;
+      }
+      .hotspot:hover .hotspot-label {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg-img-container">
+      <img src="concertbackground.png" class="bg-img" alt="Dakota's Music World Concert Collection VHS" />
+    </div>
+    <a href="index.html" class="logo-link"><img src="https://i.ibb.co/m5bVFqcV/Chat-GPT-Image-Aug-28-2025-at-02-46-48-PM-removebg-preview.png" alt="Logo" class="logo-img" border="0"></a>
+    <div class="photos-hero">
+      <!-- Hotspot: Concert Video (Live Recordings) -->
+      <!-- Add your videos content here -->
+    </div>
+    <nav class="bottom-bar">
       <a href="/index.html">Home</a>
       <a href="/photos.html">Photography</a>
       <a href="/videos.html">Live Recordings</a>
       <a href="/interviews.html">Interviews</a>
       <a href="/contact.html">Contact</a>
-    </div>
-  </div>
-  <a href="/index.html" class="logo-link"><img src="https://i.ibb.co/m5bVFqcV/Chat-GPT-Image-Aug-28-2025-at-02-46-48-PM-removebg-preview.png" alt="Logo" class="logo-img" border="0"></a>
-  <div class="videos-hero">
-    <div class="videos-title">LIVE RECORDINGS</div>
-    <!-- Add your videos content here -->
-  </div>
-  <script>
-    // Hamburger menu toggle for mobile
-    document.addEventListener('DOMContentLoaded', function() {
-      var hamburger = document.querySelector('.hamburger');
-      var menu = document.querySelector('.mobile-menu');
-      if (hamburger && menu) {
-        hamburger.addEventListener('click', function() {
-          menu.classList.toggle('open');
-        });
-        // Optional: close menu when a link is clicked
-        menu.querySelectorAll('a').forEach(function(link) {
-          link.addEventListener('click', function() {
-            menu.classList.remove('open');
-          });
-        });
-      }
-    });
-  </script>
-</body>
-</html>
+    </nav>
+  </body>
+  </html>
 
