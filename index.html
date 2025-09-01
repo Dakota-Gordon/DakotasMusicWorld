@@ -424,17 +424,33 @@
 	</style>
 </head>
 
-<body>
-	<div class="mobile-nav">
-		<button class="hamburger" aria-label="Open navigation menu">
-			<span></span><span></span><span></span>
-		</button>
-		<div class="mobile-menu">
-			<a href="/index.html">Home</a>
-			<a href="/photos.html">Photography</a>
-			<a href="/videos.html">Live Recordings</a>
-			<a href="/interviews.html">Interviews</a>
-			<a href="/contact.html">Contact</a>
+		body {
+			margin: 0;
+			padding: 0;
+			min-height: 100vh;
+			min-width: 100vw;
+			font-family: 'Montserrat', Arial, sans-serif;
+			background: #000 url('live/concertbackground.png') no-repeat center center fixed;
+			background-size: cover;
+			color: #fff;
+			overflow-x: hidden;
+		}
+
+		@media (max-width: 700px) {
+			body {
+				background-position: 0 0;
+				background-size: contain;
+				animation: bg-move-left 30s linear infinite;
+			}
+			@keyframes bg-move-left {
+				0% {
+					background-position-x: 0%;
+				}
+				100% {
+					background-position-x: 100%;
+				}
+			}
+		}
 		</div>
 	</div>
 	<script>
