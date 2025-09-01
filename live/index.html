@@ -9,8 +9,8 @@
 	<style>
 		html, body { height: 100%; margin: 0; padding: 0; }
 		body { width: 100vw; height: 100vh; overflow: hidden; background: #000; color: #fff; font-family: 'Montserrat', Arial, sans-serif; }
-		.bg-img-container { position: fixed; left: 0; top: 0; width: 100vw; height: 100vh; z-index: 0; overflow: hidden; }
-		.bg-img { width: 100vw; height: 100vh; object-fit: cover; object-position: center center; position: absolute; left: 0; top: 0; z-index: 0; user-select: none; pointer-events: none; }
+	.bg-img-container { display: none; }
+	body { background: #000 url('https://videos.openai.com/vg-assets/assets%2Ftask_01k3rt7bzzespt7mep56qyhs6s%2F1756400852_img_0.webp?st=2025-08-28T15%3A52%3A53Z&se=2025-09-03T16%3A52%3A53Z&sks=b&skt=2025-08-28T15%3A52%3A53Z&ske=2025-09-03T16%3A52%3A53Z&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skoid=aa5ddad1-c91a-4f0a-9aca-e20682cc8969&skv=2019-02-02&sv=2018-11-09&sr=b&sp=r&spr=https%2Chttp&sig=8X%2B%2Bf5os0GjZlKZUQ3rkgqCUku3L%2FkkQfyJRMEpCrUk%3D&az=oaivgprodscus') no-repeat center center fixed; background-size: cover; }
 		.bg-img.zoom-target { transition: transform 0.7s cubic-bezier(.4,2,.6,1), opacity 0.5s; transform: scale(1); transform-origin: center center; }
 		.bg-img.zoom-target.zoomed { transform: scale(2.2) translateX(10vw) translateY(4vh); transform-origin: 8% 68%; z-index: 10; }
 		.logo-link { position: fixed; top: 2vw; left: 6vw; z-index: 10; background: transparent; padding: 0; }
