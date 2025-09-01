@@ -31,6 +31,43 @@
 				object-position: center center !important;
 				background: #000 !important;
 			}
+			.hotspot {
+				display: none !important;
+			}
+			.mobile-page-list {
+				display: flex !important;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 90vw;
+				z-index: 10;
+				gap: 4vw;
+			}
+			.mobile-page-list a {
+				display: block;
+				background: rgba(56,69,31,0.92);
+				color: #f47a2c;
+				font-family: 'Permanent Marker', 'Montserrat', Arial, sans-serif;
+				font-size: 6vw;
+				font-weight: 700;
+				text-align: center;
+				text-decoration: none;
+				border-radius: 14px;
+				padding: 3vw 0;
+				margin: 0;
+				box-shadow: 0 2px 8px #0005;
+				letter-spacing: 1px;
+				transition: background 0.18s, color 0.18s;
+			}
+			.mobile-page-list a:active {
+				background: #38451f;
+				color: #fffbe7;
+			}
+		}
 		}
 		.mobile-nav {
 			display: none;
@@ -449,33 +486,56 @@
 			});
 		});
 	</script>
-	<div class="fade-content">
-		<nav class="bottom-bar">
-			<a href="/index.html">Home</a>
-			<a href="/photos.html">Photography</a>
-			<a href="/videos.html">Live Recordings</a>
-			<a href="/interviews.html">Interviews</a>
-			<a href="/contact.html">Contact</a>
-		</nav>
-		<!-- Background is now set via CSS -->
-		<a href="/index.html" class="logo-link"><img src="https://i.ibb.co/m5bVFqcV/Chat-GPT-Image-Aug-28-2025-at-02-46-48-PM-removebg-preview.png" alt="Chat-GPT-Image-Aug-28-2025-at-02-46-48-PM-removebg-preview" class="logo-img" border="0"></a>
+		<div class="fade-content">
+			<nav class="bottom-bar">
+				<a href="/index.html">Home</a>
+				<a href="/photos.html">Photography</a>
+				<a href="/videos.html">Live Recordings</a>
+				<a href="/interviews.html">Interviews</a>
+				<a href="/contact.html">Contact</a>
+			</nav>
+			<!-- Background is now set via CSS -->
+			<a href="/index.html" class="logo-link"><img src="https://i.ibb.co/m5bVFqcV/Chat-GPT-Image-Aug-28-2025-at-02-46-48-PM-removebg-preview.png" alt="Chat-GPT-Image-Aug-28-2025-at-02-46-48-PM-removebg-preview" class="logo-img" border="0"></a>
 
-		<!-- Hotspot: Coffee Table (Interviews) -->
-		<a href="/interviews.html" class="hotspot" style="top: 44%; left: 65%;" data-bg-x="50" data-bg-y="50">
-			<span class="hotspot-label">Interviews</span>
-		</a>
+			<!-- Mobile: Centered page list -->
+			<div class="mobile-page-list" style="display:none;">
+				<a href="/index.html">Home</a>
+				<a href="/photos.html">Photography</a>
+				<a href="/videos.html">Live Recordings</a>
+				<a href="/interviews.html">Interviews</a>
+				<a href="/contact.html">Contact</a>
+			</div>
 
-		<!-- Hotspot: Camera (Photography) -->
-		<a href="/photos.html" class="hotspot" style="top: 50%; left: 12%;" data-bg-x="50" data-bg-y="50">
-			<span class="hotspot-label">Photography</span>
-		</a>
-		<!-- No special JS for Photography hotspot -->
+			<!-- Hotspot: Coffee Table (Interviews) -->
+			<a href="/interviews.html" class="hotspot" style="top: 44%; left: 65%;" data-bg-x="50" data-bg-y="50">
+				<span class="hotspot-label">Interviews</span>
+			</a>
 
-		<!-- Hotspot: TV (Live Recordings) -->
-		<a href="/videos.html" class="hotspot" style="top: 15%; left: 70%;" data-bg-x="50" data-bg-y="50">
-			<span class="hotspot-label">Live Recordings</span>
-		</a>
-	</div>
+			<!-- Hotspot: Camera (Photography) -->
+			<a href="/photos.html" class="hotspot" style="top: 50%; left: 12%;" data-bg-x="50" data-bg-y="50">
+				<span class="hotspot-label">Photography</span>
+			</a>
+			<!-- No special JS for Photography hotspot -->
+
+			<!-- Hotspot: TV (Live Recordings) -->
+			<a href="/videos.html" class="hotspot" style="top: 15%; left: 70%;" data-bg-x="50" data-bg-y="50">
+				<span class="hotspot-label">Live Recordings</span>
+			</a>
+		</div>
+		<script>
+			// Show mobile page list only on mobile
+			function toggleMobilePageList() {
+				var list = document.querySelector('.mobile-page-list');
+				if (!list) return;
+				if (window.innerWidth <= 600) {
+					list.style.display = 'flex';
+				} else {
+					list.style.display = 'none';
+				}
+			}
+			window.addEventListener('DOMContentLoaded', toggleMobilePageList);
+			window.addEventListener('resize', toggleMobilePageList);
+		</script>
 </body>
 	<style>
 			html, body {
