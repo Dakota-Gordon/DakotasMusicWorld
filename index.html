@@ -46,39 +46,6 @@
 		.hotspot {
 			display: none !important;
 		}
-		.mobile-page-list {
-			display: flex !important;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			width: 90vw;
-			z-index: 10;
-			gap: 4vw;
-		}
-		.mobile-page-list a {
-			display: block;
-			background: rgba(56,69,31,0.92);
-			color: #f47a2c;
-			font-family: 'Permanent Marker', 'Montserrat', Arial, sans-serif;
-			font-size: 6vw;
-			font-weight: 700;
-			text-align: center;
-			text-decoration: none;
-			border-radius: 14px;
-			padding: 3vw 0;
-			margin: 0;
-			box-shadow: 0 2px 8px #0005;
-			letter-spacing: 1px;
-			transition: background 0.18s, color 0.18s;
-		}
-		.mobile-page-list a:active {
-			background: #38451f;
-			color: #fffbe7;
-		}
 		.mobile-nav {
 			display: none;
 			position: fixed;
@@ -518,17 +485,7 @@
 		</div>
 		<script>
 			// Show mobile page list only on mobile
-			function toggleMobilePageList() {
-				var list = document.querySelector('.mobile-page-list');
-				if (!list) return;
-				if (window.innerWidth <= 600) {
-					list.style.display = 'flex';
-				} else {
-					list.style.display = 'none';
-				}
-			}
-			window.addEventListener('DOMContentLoaded', toggleMobilePageList);
-			window.addEventListener('resize', toggleMobilePageList);
+
 		</script>
 </body>
     
