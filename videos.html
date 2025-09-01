@@ -183,7 +183,7 @@
       }
     </style>
   </head>
-  <body>
+  <body style="overflow-y: auto;">
     <script>
       // Fade in on load
       document.addEventListener('DOMContentLoaded', function() {
@@ -220,9 +220,21 @@
         <img src="concertbackground.png" class="bg-img" alt="Dakota's Music World Concert Collection VHS" />
       </div>
       <a href="index.html" class="logo-link"><img src="https://i.ibb.co/m5bVFqcV/Chat-GPT-Image-Aug-28-2025-at-02-46-48-PM-removebg-preview.png" alt="Logo" class="logo-img" border="0"></a>
-      <div class="photos-hero">
-        <!-- Hotspot: Concert Video (Live Recordings) -->
-        <!-- Add your videos content here -->
+      <div class="videos-hero" style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding-top: 120px;">
+        <h1 style="font-family: 'Permanent Marker', 'Montserrat', Arial, sans-serif; font-size: 2.5em; margin-bottom: 32px; text-shadow: 0 2px 12px #000a;">Concert Collection Videos</h1>
+        <div style="margin-bottom: 40px; text-align: center;">
+          <div id="media-pass-container" style="cursor: pointer; display: inline-block; border-radius: 18px; box-shadow: 0 4px 24px #0008; overflow: hidden; border: 3px solid #f47a2c; background: #222;">
+            <img src="live/20250829_1648_Camera and Media Badge_remix_01k3vs9p0jfr7vyadgmzse2h63-Picsart-AiImageEnhancer.png" alt="Media Pass" style="width: 220px; height: auto; display: block;">
+            <div style="background: #f47a2c; color: #222; font-weight: bold; font-size: 1.1em; padding: 8px 0;">View All Videos</div>
+          </div>
+        </div>
+        <div id="video-gallery" style="display: none; width: 100%; max-width: 700px; margin: 0 auto; background: rgba(0,0,0,0.92); border-radius: 18px; box-shadow: 0 2px 16px #000a; padding: 32px 16px 24px 16px;">
+          <h2 style="font-family: 'Permanent Marker', 'Montserrat', Arial, sans-serif; font-size: 2em; margin-bottom: 18px; color: #f47a2c;">My Videos</h2>
+          <div id="user-videos" style="display: flex; flex-direction: column; gap: 24px; align-items: center;">
+            <!-- Add your video embeds or thumbnails here -->
+            <div style="color: #fffbe7; opacity: 0.7; font-size: 1.1em;">No videos yet. Add your videos here!</div>
+          </div>
+        </div>
       </div>
       <nav class="bottom-bar">
         <a href="/index.html">Home</a>
@@ -232,6 +244,21 @@
         <a href="/contact.html">Contact</a>
       </nav>
     </div>
+    <script>
+      // Show/hide video gallery on media pass click
+      document.addEventListener('DOMContentLoaded', function() {
+        var mediaPass = document.getElementById('media-pass-container');
+        var gallery = document.getElementById('video-gallery');
+        if (mediaPass && gallery) {
+          mediaPass.addEventListener('click', function() {
+            gallery.style.display = (gallery.style.display === 'none' || gallery.style.display === '') ? 'block' : 'none';
+            if (gallery.style.display === 'block') {
+              gallery.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          });
+        }
+      });
+    </script>
   </body>
   </html>
 
