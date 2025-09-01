@@ -1,37 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-</style>
-
-<script>
-
-		}
-		window.addEventListener('DOMContentLoaded', setupHotspotZoom);
-		function setupHotspotSuperZoom() {
-			document.querySelectorAll('.hotspot').forEach(function(hotspot) {
-				hotspot.addEventListener('mouseenter', function(e) {
-					const bg = document.querySelector('.bg-img');
-					if (!bg) return;
-					let xPercent = hotspot.getAttribute('data-bg-x') || 50;
-					let yPercent = hotspot.getAttribute('data-bg-y') || 50;
-					if (!String(xPercent).includes('%') && !String(xPercent).includes('px')) xPercent = `${xPercent}%`;
-					if (!String(yPercent).includes('%') && !String(yPercent).includes('px')) yPercent = `${yPercent}%`;
-					if (hotspot.getAttribute('href') === 'photos.html' || hotspot.getAttribute('href') === '/live/photos.html') { return; } else { bg.style.width = '300vw'; bg.style.height = '300vh'; }
-					bg.style.objectPosition = `${xPercent} ${yPercent}`;
-				});
-				hotspot.addEventListener('mouseleave', function(e) {
-					const bg = document.querySelector('.bg-img');
-					if (!bg) return;
-					bg.style.transition = 'object-fit 3.2s, object-position 3.2s';
-					bg.style.objectFit = 'cover';
-					bg.style.width = '100vw';
-					bg.style.height = '100vh';
-					bg.style.objectPosition = '50% 50%';
-				});
-			});
-		}
-		window.addEventListener('DOMContentLoaded', setupHotspotSuperZoom);
-	</script>
+<!-- All <style> and <script> tags should be in <head> or before </body> -->
 </head>
 <body>
 	<div class="bg-img-container">
@@ -50,7 +20,7 @@
 		</div>
 	</div>
 	<a href="/index.html" class="logo-link"><img src="https://i.ibb.co/m5bVFqcV/Chat-GPT-Image-Aug-28-2025-at-02-46-48-PM-removebg-preview.png" alt="Logo" class="logo-img" border="0"></a>
-	<!-- Hotspot: Coffee Table (Interviews) -->
+
 	<a href="/interviews.html" class="hotspot" style="top: 44%; left: 65%;" data-bg-x="50" data-bg-y="50">
 		<span class="hotspot-label">Interviews</span>
 	</a>
@@ -230,11 +200,8 @@
 		.mobile-menu.open {
 			display: flex;
 		}
-
 	}
-
-
-
+	<!-- Hotspot: Coffee Table (Interviews) -->
 
 
 		<!-- Hotspot: Coffee Table (Interviews) -->
