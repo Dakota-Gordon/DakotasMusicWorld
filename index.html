@@ -424,24 +424,33 @@
 	</style>
 </head>
 
-			body {
-				margin: 0;
-				padding: 0;
-				min-height: 100vh;
-				min-width: 100vw;
-				font-family: 'Montserrat', Arial, sans-serif;
-				background: #000 url('live/concertbackground.png') no-repeat center center fixed;
-				background-size: cover;
-				color: #fff;
-				overflow-x: hidden;
-			}
+		body {
+			margin: 0;
+			padding: 0;
+			min-height: 100vh;
+			min-width: 100vw;
+			font-family: 'Montserrat', Arial, sans-serif;
+			background: #000 url('live/concertbackground.png') no-repeat center center fixed;
+			background-size: cover;
+			color: #fff;
+			overflow-x: hidden;
+		}
 
-			@media (max-width: 700px) {
-				body {
-					background-position: 0 0;
-					background-size: contain;
+		@media (max-width: 700px) {
+			body {
+				background-position: 0 0;
+				background-size: contain;
+				animation: bg-move-left 30s linear infinite;
+			}
+			@keyframes bg-move-left {
+				0% {
+					background-position-x: 0%;
+				}
+				100% {
+					background-position-x: 100%;
 				}
 			}
+		}
 		</div>
 	</div>
 	<script>
