@@ -403,7 +403,61 @@
 			<body>
 			       <div class="bg-img-container">
 				       <img src="https://videos.openai.com/vg-assets/assets%2Ftask_01k3rt7bzzespt7mep56qyhs6s%2F1756400852_img_0.webp?st=2025-08-28T15%3A52%3A53Z&se=2025-09-03T16%3A52%3A53Z&sks=b&skt=2025-08-28T15%3A52%3A53Z&ske=2025-09-03T16%3A52%3A53Z&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skoid=aa5ddad1-c91a-4f0a-9aca-e20682cc8969&skv=2019-02-02&sv=2018-11-09&sr=b&sp=r&spr=https%2Chttp&sig=8X%2B%2Bf5os0GjZlKZUQ3rkgqCUku3L%2FkkQfyJRMEpCrUk%3D&az=oaivgprodscus" class="bg-img zoom-target" id="main-bg-img" alt="Room Background"/>
-			       </div>
+				</div>
+
+				<!-- Recent Events Section -->
+				<section id="recent-events" style="width:100vw; background:rgba(0,0,0,0.92); padding: 60px 0 80px 0; margin-top: 0;">
+					<h2 style="text-align:center; color:#f47a2c; font-family:'Permanent Marker', 'Montserrat', Arial, sans-serif; font-size:2.2em; margin-bottom:32px; letter-spacing:1px;">Recent Events</h2>
+					<div class="event-passes-row" style="display:flex; flex-wrap:wrap; justify-content:center; gap:36px; overflow-x:auto; padding: 0 24px;">
+						<!-- Sample Event Pass -->
+						<div class="event-pass-card" style="background:#222; border-radius:18px; box-shadow:0 4px 24px #0008; border:3px solid #f47a2c; width:220px; min-width:180px; max-width:240px; display:flex; flex-direction:column; align-items:center; cursor:pointer; transition:transform 0.18s;">
+							<img src="live/20250829_1648_Camera and Media Badge_remix_01k3vs9p0jfr7vyadgmzse2h63-Picsart-AiImageEnhancer.png" alt="Media Pass" style="width:100%; height:auto; border-radius:14px 14px 0 0;">
+							<div style="padding:16px 10px 10px 10px; text-align:center;">
+								<div style="font-family:'Permanent Marker', 'Montserrat', Arial, sans-serif; color:#f47a2c; font-size:1.1em; margin-bottom:6px;">Concert Collection VHS</div>
+								<div style="color:#fffbe7; font-size:0.98em; opacity:0.8; margin-bottom:10px;">August 29, 2025</div>
+								<button class="expand-event-btn" style="background:#f47a2c; color:#222; font-weight:bold; border:none; border-radius:8px; padding:7px 18px; font-size:1em; cursor:pointer;">View Event</button>
+							</div>
+							<div class="event-details" style="display:none; background:#181818; color:#fff; border-radius:0 0 14px 14px; padding:18px 12px 12px 12px; width:100%;">
+								<div style="margin-bottom:10px; font-size:1.05em; color:#f47a2c;">Event Links:</div>
+								<ul style="list-style:none; padding:0; margin:0;">
+									<li><a href="/photos.html" style="color:#f47a2c; text-decoration:none;">Photos</a></li>
+									<li><a href="/videos.html" style="color:#f47a2c; text-decoration:none;">Recordings</a></li>
+									<li><a href="/interviews.html" style="color:#f47a2c; text-decoration:none;">Interviews</a></li>
+								</ul>
+							</div>
+						</div>
+						<!-- Add more event-pass-card blocks here for more events -->
+					</div>
+				</section>
+
+				<script>
+				// Expand/collapse event details
+				document.addEventListener('DOMContentLoaded', function() {
+					document.querySelectorAll('.event-pass-card').forEach(function(card) {
+						var btn = card.querySelector('.expand-event-btn');
+						var details = card.querySelector('.event-details');
+						btn.addEventListener('click', function(e) {
+							e.stopPropagation();
+							var isOpen = details.style.display === 'block';
+							document.querySelectorAll('.event-details').forEach(function(d) { d.style.display = 'none'; });
+							details.style.display = isOpen ? 'none' : 'block';
+						});
+						// Optional: clicking outside the details closes it
+						card.addEventListener('click', function(e) {
+							if (e.target === btn) return;
+							var isOpen = details.style.display === 'block';
+							document.querySelectorAll('.event-details').forEach(function(d) { d.style.display = 'none'; });
+							details.style.display = isOpen ? 'none' : 'block';
+						});
+					});
+					// Close details if clicking outside any card
+					document.addEventListener('click', function(e) {
+						if (!e.target.closest('.event-pass-card')) {
+							document.querySelectorAll('.event-details').forEach(function(d) { d.style.display = 'none'; });
+						}
+					});
+				});
+				</script>
 	<script>
 		// Hamburger menu toggle for mobile
 		document.addEventListener('DOMContentLoaded', function() {
